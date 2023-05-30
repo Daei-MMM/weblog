@@ -1,0 +1,41 @@
+{% extends 'blog1/base.html' %}
+{% block content %}
+<style>
+    h1 {
+      border-style: outset;
+      border-width: 2px;
+      border-color: rgb(118, 80, 255); 
+    }
+    
+    div {
+      border-style: inset;
+      border-width: 2px;
+      border-color: rgb(118, 80, 255);  
+      padding-left: 10px;
+      padding-top: 10px;
+    }
+    </style>
+<body style="background-color: rgb(215, 215, 255);">
+    
+    {% for one in all %}
+    <table>
+    <h1> {{one.title}} </h1>
+       
+        <div>
+          <textarea disabled
+                    style="
+                      height: 25%;
+                      width: 100%;
+                      background-color: white;
+                      color: black;">
+            
+            {{one.text}}
+          </textarea>
+        <br>
+        <br>
+        {{one.date}}
+        </div>
+      </table>   
+    {% endfor %} 
+</body>
+{% endblock %}
